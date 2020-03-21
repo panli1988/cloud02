@@ -1,0 +1,35 @@
+server:
+  port: 7001
+spring:
+  application:
+    name: eureka-server
+  cloud:
+    config:
+      server:
+        git:
+          search-paths: /cloud02
+          username:
+          password:
+          default-label: master
+          uri: https://github.com/panli1988/config-server
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+eureka:
+  client:
+    #要不要去注册中心获取其他服务的地址
+    fetch-registry: false
+    #自己就是注册中心，不用注册自己
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    hostname: localhost
+    instance-id: eureka-server
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

@@ -1,0 +1,28 @@
+#server:
+#  port: 8002
+#spring:
+#  application:
+#    name: provider
+#eureka:
+#  instance:
+#    hostname: localhost
+#    prefer-ip-address: true
+#    instance-id: provider-8002
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:7001/eureka/
+#info信息
+info:
+  app:
+    name: provider-8002
+  company:
+    name: www.xxx.com
+  build:
+    artifactId: ${project.artifactId}
+    version: ${project.version}
+spring:
+    rabbitmq:
+      host: localhost
+      port: 5672
+      username: guest
+      password: guest
